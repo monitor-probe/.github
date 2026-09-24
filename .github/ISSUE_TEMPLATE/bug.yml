@@ -1,0 +1,77 @@
+name: 问题反馈
+description: 功能不按预期工作、数字对不上、安装或升级失败
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        提交前请先查[常见问题](https://monitor-document.pages.dev/reference/faq)和已有 issue。使用上的疑问请到[讨论区](https://github.com/monitor-probe/monitor/discussions/categories/q-a)提问。
+
+        **安全漏洞请不要在这里提交**，按[安全策略](https://github.com/monitor-probe/.github/blob/main/SECURITY.md)私下报告。
+  - type: textarea
+    id: what
+    attributes:
+      label: 现象
+      description: 看到了什么，期望看到什么。截图可以直接粘贴。
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      description: 从哪个页面、哪个操作开始。只出现过一次也请写明。
+      placeholder: |
+        1. 在面板「节点」页添加节点
+        2. 在节点上执行安装命令
+        3. 节点一直显示离线
+  - type: input
+    id: versions
+    attributes:
+      label: 版本
+      description: hub 版本在面板的「更新」页；agent 版本是节点上 `/opt/monitor/monitor-agent --help` 输出的第一行。
+      placeholder: hub 1.3.0，agent 1.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: install
+    attributes:
+      label: hub 的安装方式
+      options:
+        - 一键脚本（install-hub.sh）
+        - Docker
+        - 直接运行二进制
+  - type: dropdown
+    id: entry
+    attributes:
+      label: 面板的访问方式
+      description: 可多选，例如 Cloudflare 代理在前、nginx 在后。
+      multiple: true
+      options:
+        - nginx
+        - Caddy
+        - 宝塔 / aaPanel
+        - Cloudflare 代理（橙色云朵）
+        - Cloudflare Tunnel
+        - 其它反向代理
+        - 直接用 IP 和端口访问
+  - type: input
+    id: system
+    attributes:
+      label: 出问题机器的系统
+      description: 发行版与版本；OpenRC 系统、LXC / OpenVZ 容器、软路由请注明。
+      placeholder: Debian 12；Alpine 3.22（OpenRC）；PVE 上的 LXC 容器
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志
+      description: |
+        hub：`journalctl -u monitor-hub -n 100 --no-pager`，Docker 部署用 `docker logs --tail 100 <容器名>`
+        agent：`journalctl -u monitor-agent -n 100 --no-pager`，OpenRC 系统看 `/var/log/monitor-agent.log`
+      render: text
+  - type: checkboxes
+    id: redacted
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 已从上面的内容里去掉 token、密码，以及不想公开的 IP 和域名
+          required: true

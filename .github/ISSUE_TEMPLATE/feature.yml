@@ -1,0 +1,30 @@
+name: 功能建议
+description: 缺少某个功能，或者现有功能用起来不顺手
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请先看[设计哲学](https://monitor-document.pages.dev/guide/philosophy#不做的功能)中「不做的功能」一节：负载告警、WebSSH、插件、ICMP / HTTP 探测、agent 自动更新与跨平台 agent 不在计划内。
+  - type: textarea
+    id: problem
+    attributes:
+      label: 想解决的问题
+      description: 在什么场景下遇到了什么不便。把问题说清楚，比直接给出做法更有帮助。
+    validations:
+      required: true
+  - type: textarea
+    id: now
+    attributes:
+      label: 目前的变通办法
+  - type: textarea
+    id: idea
+    attributes:
+      label: 设想的做法
+      description: 可选。界面上怎么操作，或者接口长什么样。
+  - type: input
+    id: scale
+    attributes:
+      label: 管理的节点数
+      description: 用来判断方案在多少台时开始吃力。
+      placeholder: 例如 12

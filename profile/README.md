@@ -13,6 +13,7 @@ Rust 写的服务器探针：看状态、看流量、看延迟、算成本，外
 | [monitor-theme-default](https://github.com/monitor-probe/monitor-theme-default) | 内置默认主题，也是第三方主题的参考实现 |
 | [monitor-theme-serverstatus](https://github.com/monitor-probe/monitor-theme-serverstatus) | 紧凑表格布局的公开页主题 |
 | [monitor-document](https://github.com/monitor-probe/monitor-document) | 文档站 |
+| [themes](https://github.com/monitor-probe/themes) | 主题站：收录第三方主题，提供在线预览 |
 
 使用上的疑问请到[讨论区](https://github.com/monitor-probe/monitor/discussions)，bug 与功能建议提 issue，
 安全问题见[安全策略](https://github.com/monitor-probe/.github/blob/main/SECURITY.md)。

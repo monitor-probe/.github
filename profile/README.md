@@ -4,6 +4,8 @@ Rust 写的服务器探针：看状态、看流量、看延迟、算成本，外
 
 文档：[monitor-document.pages.dev](https://monitor-document.pages.dev)
 
+主题站：[monitor-themes.pages.dev](https://monitor-themes.pages.dev)，在线预览各个公开页主题，复制地址即可在面板安装。
+
 | 仓库 | 说明 |
 |---|---|
 | [monitor](https://github.com/monitor-probe/monitor) | hub：面板、API、公开页宿主 |
